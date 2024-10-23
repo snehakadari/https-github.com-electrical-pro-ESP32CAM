@@ -7,7 +7,7 @@ int main() {
 
     int n = number; // Store the original number for reference
     int digit = 0;
-    
+{
         digit = 0; // Reset digit for each iteration
 
         // Extract the last digit without using division or modulo
