@@ -7,9 +7,7 @@ int main() {
 
     int n = number; // Store the original number for reference
     int digit = 0;
-
-    // Loop until all digits are processed
-    while (n > 0) {
+    
         digit = 0; // Reset digit for each iteration
 
         // Extract the last digit without using division or modulo
@@ -27,6 +25,6 @@ int main() {
         sum += digit; // Add the extracted digit to the sum
     }
 
-    printf("The sum of the digits of %d is: %d\n", number, sum);
+    printf("The sum of the digits of %d is: %d\n", number,sum);
     return 0;
 }
