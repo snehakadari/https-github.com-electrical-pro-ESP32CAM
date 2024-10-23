@@ -1,30 +1,35 @@
 #include <stdio.h>
 
-int main() {
-    int number, sum = 0;
-    printf("Enter a number: ");
-    scanf("%d", &number);
+int sumOfDigits(int n) {
+    int sum = 0;
 
-    int n = number; // Store the original number for reference
-    int digit = 0;
-{
-        digit = 0; // Reset digit for each iteration
-
-        // Extract the last digit without using division or modulo
+    // Loop until all digits are processed
+    while (n > 0) {
+        int digit = 0;
+        // Extract the last digit using a loop to avoid division/modulo
         while (n > 0) {
             digit++;  // Increment digit count
             n -= 1;   // Decrease n
-            
             // Check if we crossed a ten boundary
             if ((digit & 0xF) == 10) { // If digit becomes 10 (0xA in binary)
                 digit = 0; // Reset digit
                 n -= 9;    // Adjust n for the next ten
             }
         }
-
+        
         sum += digit; // Add the extracted digit to the sum
     }
 
-    printf("The sum of the digits of %d is: %d\n", number,sum);
+    return sum;
+}
+
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+
+    int result = sumOfDigits(number);
+    printf("The sum of the digits is: %d\n", result);
+
     return 0;
 }
